@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입 결과</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 결과 페이지에서도 헤더는 계속 고정된다 (position:fixed) -->
+  <header class="site-header">
+    <span class="logo">SKALA</span>
+    <nav>
+      <a href="signUp.html">회원가입</a>
+      <a href="#" class="active">결과</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>✅ 회원가입 결과</h2>
+    <p>입력하신 내용은 아래와 같습니다.</p>
+    <hr>
+
+    <table class="result-table">
+      <thead>
+        <tr><th>항목</th><th>입력 값</th></tr>
+      </thead>
+      <tbody id="resultBody"></tbody>
+    </table>
+
+    <br>
+    <a href="signUp.html" class="btn btn-primary">다시 작성하기</a>
+  </div>
+
+  <script>
+    // 표시할 항목 순서와 한글 라벨
+    const LABELS = {
+      userName: '이름',
+      userId:   '아이디',
+      userEmail:'이메일',
+      userTel:  '전화번호',
+      userBirth:'생년월일',
+      gender:   '성별',
+      interest: '관심 분야',
+      region:   '지역',
+      intro:    '한 줄 소개',
+      agree:    '약관 동의',
+    };
+
+    const params = new URLSearchParams(location.search);
+    const tbody = document.getElementById('resultBody');
+
+    for (const [key, label] of Object.entries(LABELS)) {
+      // 같은 name(checkbox)은 복수 값 → getAll 로 모아 콤마로 표시
+      const values = params.getAll(key).filter(v => v !== '');
+      const text = values.length ? values.join(', ') : '(입력 없음)';
+
+      const tr = document.createElement('tr');
+      const th = document.createElement('th');
+      th.textContent = label;
+      const td = document.createElement('td');
+      td.textContent = text;
+      if (!values.length) td.className = 'empty';
+      tr.append(th, td);
+      tbody.appendChild(tr);
+    }
+
+    // 비밀번호는 마스킹하여 이름 다음 줄에 표시
+    const pw = params.get('userPw');
+    if (pw) {
+      const tr = document.createElement('tr');
+      const th = document.createElement('th'); th.textContent = '비밀번호';
+      const td = document.createElement('td'); td.textContent = '●'.repeat(pw.length);
+      tr.append(th, td);
+      tbody.insertBefore(tr, tbody.children[1] || null);
+    }
+  </script>
+</body>
+</html>
