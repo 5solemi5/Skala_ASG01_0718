@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DOM·이벤트·비동기·모듈·localStorage 종합 할 일 관리 앱">
+  <title>할 일 관리</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-head">
+      <h1>📝 할 일 관리</h1>
+      <!-- 오늘의 한마디: fetch 로 비동기 로드 (실패 시 기본 문구) -->
+      <p id="quote" class="quote">오늘의 한마디를 불러오는 중…</p>
+    </header>
+
+    <!-- 추가: 버튼 또는 Enter (form submit) -->
+    <form id="addForm" class="add-form">
+      <input type="text" id="todoInput" placeholder="할 일을 입력하고 Enter 또는 추가"
+             autocomplete="off" aria-label="할 일 입력">
+      <button type="submit" class="btn-add">추가</button>
+    </form>
+
+    <!-- 필터 -->
+    <div class="filters">
+      <button class="filter active" data-filter="all">전체</button>
+      <button class="filter" data-filter="active">진행중</button>
+      <button class="filter" data-filter="done">완료</button>
+    </div>
+
+    <ul id="list" class="todo-list"></ul>
+    <p id="empty" class="empty">할 일이 없습니다. 위에서 추가해 보세요! ✨</p>
+
+    <!-- 하단 요약 -->
+    <footer class="summary">
+      <span id="summary">전체 0 · 완료 0</span>
+      <button id="clearDone" class="btn-clear">완료 항목 비우기</button>
+    </footer>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
