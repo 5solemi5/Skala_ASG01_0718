@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="검색·필터·정렬·장바구니가 있는 반응형 커머스 스토어">
+  <title>스토어 · SKALA Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/theme.css">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="brand"><span class="brand__dot"></span> SKALA <span class="text-muted">Store</span></a>
+      <nav class="nav__links">
+        <a href="../signup/index.html">회원가입</a>
+        <a href="../travel/index.html">여행</a>
+        <a href="index.html" class="is-active">스토어</a>
+        <a href="../todo/index.html">할 일</a>
+      </nav>
+      <button class="cart-btn" id="cartBtn" aria-label="장바구니">🛒<span class="cart-count" id="cartCount">0</span></button>
+      <button class="icon-btn" data-theme-toggle style="margin-left:10px">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="store-hero container">
+      <div class="store-hero__intro">
+        <span class="eyebrow">New Arrivals</span>
+        <h1 class="store-title">오늘의 <span class="grad-text">테크 컬렉션</span></h1>
+        <p class="text-muted">엄선한 아이템을 검색·필터·정렬로 빠르게 찾아보세요.</p>
+      </div>
+    </section>
+
+    <!-- 툴바 -->
+    <section class="container toolbar" data-reveal>
+      <div class="search">
+        <span class="search__icon">🔍</span>
+        <input type="search" id="search" class="control" placeholder="상품 검색 (예: 헤드폰)">
+      </div>
+      <div class="chips" id="catChips">
+        <button class="chip is-active" data-cat="all">전체</button>
+        <button class="chip" data-cat="audio">오디오</button>
+        <button class="chip" data-cat="wearable">웨어러블</button>
+        <button class="chip" data-cat="camera">카메라</button>
+        <button class="chip" data-cat="pc">PC 주변기기</button>
+      </div>
+      <select id="sort" class="control sort-select">
+        <option value="popular">인기순</option>
+        <option value="price-asc">가격 낮은순</option>
+        <option value="price-desc">가격 높은순</option>
+        <option value="name">이름순</option>
+      </select>
+    </section>
+
+    <section class="container">
+      <p class="result-count text-muted" id="resultCount"></p>
+      <div class="pgrid" id="grid"></div>
+      <p class="empty-state" id="empty" hidden>😶‍🌫️ 조건에 맞는 상품이 없어요.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 SKALA Store</span>
+      <span class="text-muted">Grid · Filter · State</span>
+    </div>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+  <script src="gallery.js"></script>
+</body>
+</html>
