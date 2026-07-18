@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CSS Grid/Flexbox 반응형 상품 카드 갤러리">
+  <title>상품 갤러리</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="logo">🛍️ SKALA Shop</span>
+    <nav class="menu">
+      <a href="#">신상품</a>
+      <a href="#">베스트</a>
+      <a href="#">이벤트</a>
+    </nav>
+    <button id="themeToggle" class="theme-btn">🌙 다크</button>
+  </header>
+
+  <section class="hero">
+    <h1 class="hero-title">오늘의 추천 상품</h1>
+    <p class="hero-sub">엄선한 아이템을 한눈에 만나보세요.</p>
+  </section>
+
+  <main class="wrap">
+    <section class="grid" aria-label="상품 목록">
+      <article class="product">
+        <div class="thumb" style="--c1:#ffd1dc; --c2:#ff8fab;">🎧</div>
+        <div class="body">
+          <span class="tag">신상</span>
+          <h3>무선 헤드폰</h3>
+          <p class="pdesc">몰입감 있는 사운드</p>
+          <div class="meta"><strong>₩129,000</strong><button class="buy">담기</button></div>
+        </div>
+      </article>
+      <article class="product">
+        <div class="thumb" style="--c1:#c1f0dc; --c2:#57c99a;">⌚</div>
+        <div class="body">
+          <span class="tag">베스트</span>
+          <h3>스마트 워치</h3>
+          <p class="pdesc">건강을 손목 위에</p>
+          <div class="meta"><strong>₩215,000</strong><button class="buy">담기</button></div>
+        </div>
+      </article>
+      <article class="product">
+        <div class="thumb" style="--c1:#d7e3ff; --c2:#7aa2ff;">📷</div>
+        <div class="body">
+          <span class="tag">할인</span>
+          <h3>미러리스 카메라</h3>
+          <p class="pdesc">일상을 작품으로</p>
+          <div class="meta"><strong>₩689,000</strong><button class="buy">담기</button></div>
+        </div>
+      </article>
+      <article class="product">
+        <div class="thumb" style="--c1:#ffe8c2; --c2:#ffb347;">⌨️</div>
+        <div class="body">
+          <span class="tag">신상</span>
+          <h3>기계식 키보드</h3>
+          <p class="pdesc">타건감의 정석</p>
+          <div class="meta"><strong>₩98,000</strong><button class="buy">담기</button></div>
+        </div>
+      </article>
+      <article class="product">
+        <div class="thumb" style="--c1:#e7d6ff; --c2:#b48bff;">🖱️</div>
+        <div class="body">
+          <span class="tag">인기</span>
+          <h3>게이밍 마우스</h3>
+          <p class="pdesc">정밀한 컨트롤</p>
+          <div class="meta"><strong>₩54,000</strong><button class="buy">담기</button></div>
+        </div>
+      </article>
+      <article class="product">
+        <div class="thumb" style="--c1:#cdeffd; --c2:#5bc0eb;">🔊</div>
+        <div class="body">
+          <span class="tag">베스트</span>
+          <h3>블루투스 스피커</h3>
+          <p class="pdesc">어디서나 풍성하게</p>
+          <div class="meta"><strong>₩76,000</strong><button class="buy">담기</button></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">© 2026 SKALA Shop 실습</footer>
+
+  <script>
+    const btn = document.getElementById('themeToggle');
+    btn.addEventListener('click', () => {
+      const dark = document.body.classList.toggle('dark');
+      btn.textContent = dark ? '☀️ 라이트' : '🌙 다크';
+    });
+  </script>
+</body>
+</html>
