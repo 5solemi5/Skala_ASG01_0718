@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="중국 윈난 리장 여행지 소개 - 명소·먹거리·영상을 담은 시맨틱 페이지">
+  <meta name="author" content="SKALA">
+  <title>나의 여행지 - 리장</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <header class="site-header">
+    <nav class="nav" aria-label="주요 섹션">
+      <a href="#top" class="brand">🏔️ Lijiang</a>
+      <ul>
+        <li><a href="#spots">명소</a></li>
+        <li><a href="#food">먹거리</a></li>
+        <li><a href="#media">영상 · 음악</a></li>
+        <li><a href="#info">여행 정보</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 히어로: gradient 오버레이 + 배경 이미지 -->
+    <section class="hero" aria-label="소개">
+      <div class="hero-inner">
+        <h1>중국 윈난, 리장으로 떠나는 여행</h1>
+        <p>설산과 옛 골목, 그리고 잊지 못할 음식까지.</p>
+        <a href="#spots" class="hero-btn">명소 둘러보기 ↓</a>
+      </div>
+    </section>
+
+    <section id="spots" class="section">
+      <h2>📸 대표 명소</h2>
+      <p class="desc">카드에 마우스를 올리면 이미지가 확대됩니다.</p>
+      <div class="gallery">
+        <figure class="card">
+          <img src="media/리장.jpg" alt="리장 호도협의 깊은 협곡과 강줄기" style="width:100%; height:200px; object-fit:cover;">
+          <figcaption>리장 호도협 — 협곡을 가르는 급류 트레킹 명소</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="media/세부.jpg" alt="세부 탑스힐 전망대에서 바라본 도시 전경" style="width:100%; height:200px; object-fit:cover;">
+          <figcaption>탑스힐 전망대 — 도시와 바다가 한눈에</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="media/홋카이도.jpg" alt="눈 덮인 홋카이도 대설산의 설경" style="width:100%; height:200px; object-fit:cover;">
+          <figcaption>대설산 설경 — 사계절 눈을 품은 봉우리</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="food" class="section food">
+      <div class="food-grid">
+        <article class="food-main">
+          <h2>🍜 리장의 먹거리</h2>
+          <h3>납서족 전통 국수, 얼쓰</h3>
+          <p>쌀로 만든 면에 고소한 육수를 부어내는 윈난식 국수로, 아침 식사로 인기가 많습니다.</p>
+          <h3>야크 고기 요리</h3>
+          <p>고산지대 특성상 야크 고기를 활용한 구이·전골이 발달했습니다. 담백하면서 진한 풍미가 특징입니다.</p>
+        </article>
+        <aside class="food-tip" aria-label="여행 팁">
+          <h3>💡 여행 팁</h3>
+          <ul>
+            <li>아침저녁 기온차가 큽니다. 얇은 겉옷 필수!</li>
+            <li>국숫집은 이른 아침이 가장 붐빕니다.</li>
+            <li>현금 결제 매장이 많으니 소액권을 준비하세요.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="media" class="section">
+      <h2>🎬 영상 · 🎵 음악</h2>
+      <div class="media-grid">
+        <div>
+          <h3>여행 브이로그</h3>
+          <video controls poster="media/리장.jpg" preload="metadata" style="width:100%; border-radius:12px; background:#000;">
+            <source src="media/video.mp4" type="video/mp4">
+            브라우저가 video 태그를 지원하지 않습니다.
+          </video>
+        </div>
+        <div>
+          <h3>여행 배경 음악</h3>
+          <audio controls style="width:100%;">
+            <source src="media/music.mp3" type="audio/mpeg">
+            브라우저가 audio 태그를 지원하지 않습니다.
+          </audio>
+        </div>
+      </div>
+    </section>
+
+    <section id="info" class="section">
+      <h2>🧭 여행 정보</h2>
+      <table class="info-table">
+        <tbody>
+          <tr><th>위치</th><td>중국 윈난성 리장시</td></tr>
+          <tr><th>추천 시기</th><td>4~6월, 9~10월</td></tr>
+          <tr><th>대표 명소</th><td>호도협, 옥룡설산, 리장 고성</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 SKALA Travel 실습</p>
+    <a href="#top" class="top-link">↑ 맨 위로</a>
+  </footer>
+</body>
+</html>
