@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="중국 윈난 리장 - 스크롤 리빌과 라이트박스가 있는 시네마틱 여행지 소개">
+  <meta name="author" content="SKALA">
+  <title>리장 여행 · SKALA Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/theme.css">
+  <link rel="stylesheet" href="travel.css">
+</head>
+<body id="top">
+  <header class="nav">
+    <div class="container nav__inner" data-spy>
+      <a href="../index.html" class="brand"><span class="brand__dot"></span> SKALA <span class="text-muted">Studio</span></a>
+      <nav class="nav__links">
+        <a href="#spots">명소</a>
+        <a href="#food">먹거리</a>
+        <a href="#media">미디어</a>
+        <a href="#info">정보</a>
+      </nav>
+      <button class="icon-btn" data-theme-toggle style="margin-left:12px">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 시네마틱 히어로 -->
+    <section class="thero" aria-label="소개">
+      <div class="thero__bg"></div>
+      <div class="thero__scrim"></div>
+      <div class="container thero__inner">
+        <span class="eyebrow" data-reveal>Yunnan · China</span>
+        <h1 class="thero__title" data-reveal data-reveal-delay="1">리장,<br>설산 아래의 시간</h1>
+        <p class="thero__lead" data-reveal data-reveal-delay="2">옛 골목과 급류, 그리고 잊지 못할 음식. 윈난의 숨은 보석으로 떠나는 여정.</p>
+        <div class="row" data-reveal data-reveal-delay="3" style="gap:12px;margin-top:26px">
+          <a href="#spots" class="btn btn--primary btn--lg">여정 시작 ↓</a>
+          <a href="#media" class="btn btn--ghost btn--lg" style="color:#fff;border-color:rgba(255,255,255,.4)">영상 보기</a>
+        </div>
+      </div>
+      <div class="thero__scroll">SCROLL</div>
+    </section>
+
+    <!-- 명소 갤러리 -->
+    <section id="spots" class="section container">
+      <div data-reveal><span class="eyebrow">Highlights</span>
+        <h2 class="sec-title">대표 명소</h2>
+        <p class="text-muted">이미지를 클릭하면 크게 볼 수 있어요.</p>
+      </div>
+      <div class="tgallery">
+        <figure class="tcard" data-reveal data-lightbox="media/리장.jpg" data-caption="리장 호도협 — 협곡을 가르는 급류">
+          <img src="media/리장.jpg" alt="리장 호도협의 깊은 협곡과 강줄기">
+          <figcaption><b>리장 호도협</b><span>협곡을 가르는 급류 트레킹</span></figcaption>
+        </figure>
+        <figure class="tcard" data-reveal data-reveal-delay="1" data-lightbox="media/세부.jpg" data-caption="탑스힐 전망대 — 도시와 바다">
+          <img src="media/세부.jpg" alt="세부 탑스힐 전망대에서 바라본 도시 전경">
+          <figcaption><b>탑스힐 전망대</b><span>도시와 바다가 한눈에</span></figcaption>
+        </figure>
+        <figure class="tcard" data-reveal data-reveal-delay="2" data-lightbox="media/홋카이도.jpg" data-caption="대설산 — 사계절 눈을 품은 봉우리">
+          <img src="media/홋카이도.jpg" alt="눈 덮인 대설산의 설경">
+          <figcaption><b>대설산 설경</b><span>사계절 눈을 품은 봉우리</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 먹거리 (article + aside) -->
+    <section id="food" class="section food-sec">
+      <div class="container food-grid">
+        <article data-reveal>
+          <span class="eyebrow">Taste</span>
+          <h2 class="sec-title">리장의 먹거리</h2>
+          <h3 class="food-h3">납서족 전통 국수, 얼쓰</h3>
+          <p class="text-muted">쌀로 만든 면에 고소한 육수를 부어내는 윈난식 국수. 이른 아침 골목마다 김이 오릅니다.</p>
+          <h3 class="food-h3">야크 고기 요리</h3>
+          <p class="text-muted">고산지대 특유의 담백하고 진한 풍미. 감자·버섯과 곁들여 즐깁니다.</p>
+        </article>
+        <aside class="tip-card card card--pad" data-reveal data-reveal-delay="1">
+          <h3>💡 여행 팁</h3>
+          <ul class="tip-list">
+            <li>아침저녁 기온차가 큽니다 — 얇은 겉옷 필수</li>
+            <li>국숫집은 이른 아침이 가장 붐빕니다</li>
+            <li>현금 결제 매장이 많아 소액권을 준비하세요</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 미디어 -->
+    <section id="media" class="section container">
+      <div data-reveal><span class="eyebrow">Media</span><h2 class="sec-title">영상 · 음악</h2></div>
+      <div class="media-grid">
+        <div class="card card--pad" data-reveal>
+          <h3 style="margin-bottom:12px">🎬 여행 브이로그</h3>
+          <video controls poster="media/리장.jpg" preload="metadata" class="media-el">
+            <source src="media/video.mp4" type="video/mp4">
+            브라우저가 video 태그를 지원하지 않습니다.
+          </video>
+        </div>
+        <div class="card card--pad" data-reveal data-reveal-delay="1">
+          <h3 style="margin-bottom:12px">🎵 여행 배경음악</h3>
+          <audio controls class="media-el">
+            <source src="media/music.mp3" type="audio/mpeg">
+            브라우저가 audio 태그를 지원하지 않습니다.
+          </audio>
+          <p class="text-muted" style="margin-top:14px">리장의 골목을 걷는 듯한 잔잔한 선율.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 정보 -->
+    <section id="info" class="section container">
+      <div class="info-card card card--pad" data-reveal>
+        <div><span class="eyebrow">Info</span><h2 class="sec-title">여행 정보</h2></div>
+        <dl class="info-dl">
+          <div><dt>위치</dt><dd>중국 윈난성 리장시</dd></div>
+          <div><dt>추천 시기</dt><dd>4~6월 · 9~10월</dd></div>
+          <div><dt>대표 명소</dt><dd>호도협 · 옥룡설산 · 리장 고성</dd></div>
+          <div><dt>언어</dt><dd>표준 중국어 · 납서어</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 SKALA Travel</span>
+      <a href="#top" class="btn btn--ghost">↑ 맨 위로</a>
+    </div>
+  </footer>
+
+  <!-- 라이트박스 -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" aria-label="닫기">✕</button>
+    <figure class="lightbox__fig">
+      <img id="lbImg" alt="">
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+  </div>
+
+  <script src="../assets/app.js"></script>
+  <script src="travel.js"></script>
+</body>
+</html>
