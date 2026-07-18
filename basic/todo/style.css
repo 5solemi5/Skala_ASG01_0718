@@ -1,0 +1,59 @@
+:root {
+  --bg: #eef1f7;
+  --surface: #ffffff;
+  --text: #1f2633;
+  --muted: #7a8290;
+  --primary: #4f46e5;
+  --line: #e5e8f0;
+  --danger: #e5484d;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Malgun Gothic", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  display: flex; justify-content: center;
+  padding: 40px 16px;
+}
+.app {
+  width: 100%; max-width: 520px;
+  background: var(--surface); border-radius: 18px;
+  box-shadow: 0 12px 40px rgba(20,30,60,.10); padding: 28px;
+}
+.app-head h1 { margin: 0 0 6px; }
+.quote {
+  margin: 0 0 20px; color: var(--primary);
+  background: rgba(79,70,229,.08); padding: 10px 14px;
+  border-radius: 10px; font-size: 14px; min-height: 40px;
+}
+
+.add-form { display: flex; gap: 8px; margin-bottom: 16px; }
+.add-form input { flex: 1; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; font-size: 15px; }
+.add-form input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,.15); }
+.btn-add { border: none; background: var(--primary); color: #fff; padding: 0 20px; border-radius: 10px; font-weight: bold; cursor: pointer; }
+.btn-add:hover { opacity: .9; }
+
+/* 필터 */
+.filters { display: flex; gap: 8px; margin-bottom: 14px; }
+.filter { border: 1px solid var(--line); background: var(--surface); color: var(--muted); padding: 7px 16px; border-radius: 20px; font-weight: 600; cursor: pointer; }
+.filter.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+/* 목록 */
+.todo-list { list-style: none; margin: 0; padding: 0; }
+.todo { display: flex; align-items: center; gap: 10px; padding: 12px 6px; border-bottom: 1px solid var(--line); }
+.check { display: flex; align-items: center; gap: 10px; flex: 1; cursor: pointer; }
+.check input { width: 18px; height: 18px; cursor: pointer; }
+.text { font-size: 15px; }
+/* 완료 항목: 취소선 */
+.todo.done .text { text-decoration: line-through; color: var(--muted); }
+.del { border: none; background: transparent; color: var(--muted); font-size: 16px; cursor: pointer; padding: 4px 8px; border-radius: 6px; }
+.del:hover { background: #fdecec; color: var(--danger); }
+
+.empty { text-align: center; color: var(--muted); padding: 24px 0; }
+
+/* 요약 */
+.summary { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.btn-clear { border: 1px solid var(--line); background: var(--surface); color: var(--muted); padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 13px; }
+.btn-clear:hover { color: var(--danger); border-color: var(--danger); }
