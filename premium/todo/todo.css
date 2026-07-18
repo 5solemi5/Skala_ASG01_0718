@@ -1,0 +1,75 @@
+.todo-wrap { max-width: 720px; padding: clamp(24px,4vw,48px) 0 80px; }
+
+/* 헤더 카드 + 진행률 링 */
+.head-card { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.head-title { font-size: clamp(26px, 4vw, 38px); margin: 12px 0 8px; }
+.quote { font-style: italic; max-width: 34ch; }
+
+.ring { position: relative; display: grid; place-items: center; flex-shrink: 0; }
+.ring svg { transform: rotate(0); }
+.ring__bg { fill: none; stroke: var(--line); stroke-width: 10; }
+.ring__fg {
+  fill: none; stroke: url(#grad); stroke-width: 10; stroke-linecap: round;
+  stroke: var(--violet);
+  stroke-dasharray: 326.7; stroke-dashoffset: 326.7;
+  transition: stroke-dashoffset .6s var(--ease);
+}
+.ring__label { position: absolute; text-align: center; }
+.ring__label strong { display: block; font-family: var(--font-display); font-size: 26px; }
+.ring__label span { font-size: 12px; color: var(--muted); }
+
+/* 입력바 */
+.add-bar { display: flex; gap: 10px; padding: 10px; margin: 20px 0 18px; }
+.add-input { flex: 1; border: none; background: transparent; padding: 12px 14px; font-size: 16px; color: var(--ink); font-family: inherit; }
+.add-input:focus { outline: none; }
+.add-submit { flex-shrink: 0; }
+
+/* 툴바 */
+.todo-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.clear-btn { --pad: 9px 16px; font-size: 13px; }
+
+/* 목록 */
+.todo-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.todo {
+  display: flex; align-items: center; gap: 14px; padding: 15px 16px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md);
+  box-shadow: var(--sh-sm); transition: transform .2s var(--ease), box-shadow .2s, border-color .2s;
+  animation: rowIn .35s var(--ease) both;
+}
+@keyframes rowIn { from { opacity: 0; transform: translateY(-8px); } }
+.todo:hover { border-color: var(--line-2); box-shadow: var(--sh-md); }
+.todo.is-removing { animation: rowOut .3s var(--ease) forwards; }
+@keyframes rowOut { to { opacity: 0; transform: translateX(30px); height: 0; padding-block: 0; margin: 0; } }
+
+/* 커스텀 체크박스 */
+.tk { position: relative; flex-shrink: 0; width: 24px; height: 24px; cursor: pointer; }
+.tk input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.tk__box { width: 24px; height: 24px; border-radius: 8px; border: 2px solid var(--line-2); display: grid; place-items: center; color: #fff; transition: .2s var(--ease); }
+.tk input:checked + .tk__box { background: var(--grad); border-color: transparent; }
+.tk__box::after { content: "✓"; font-size: 14px; opacity: 0; transform: scale(.5); transition: .2s var(--ease); }
+.tk input:checked + .tk__box::after { opacity: 1; transform: scale(1); }
+
+.todo__text { flex: 1; font-size: 15.5px; cursor: text; word-break: break-word; }
+.todo.done .todo__text { text-decoration: line-through; color: var(--muted); }
+.todo__edit { flex: 1; border: none; background: var(--surface-2); border-radius: 8px; padding: 8px 10px; font: inherit; color: var(--ink); }
+.todo__edit:focus { outline: 2px solid var(--violet); }
+.todo__del { border: none; background: transparent; color: var(--muted); cursor: pointer; font-size: 15px; width: 32px; height: 32px; border-radius: 50%; transition: .2s var(--ease); flex-shrink: 0; }
+.todo__del:hover { background: color-mix(in srgb, var(--danger) 14%, transparent); color: var(--danger); }
+
+/* 빈 상태 */
+.empty { text-align: center; padding: 50px 0; color: var(--muted); }
+.empty__emoji { font-size: 46px; margin-bottom: 10px; }
+.empty[hidden] { display: none; }
+
+/* 하단 요약 */
+.todo-summary {
+  display: flex; gap: 26px; justify-content: center; flex-wrap: wrap;
+  margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 14px;
+}
+.todo-summary strong { color: var(--ink); font-family: var(--font-display); font-size: 16px; margin-left: 2px; }
+
+@media (max-width: 560px) {
+  .head-card { flex-direction: column-reverse; text-align: center; align-items: center; }
+  .quote { max-width: none; }
+}

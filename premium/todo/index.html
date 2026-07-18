@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="진행률 링·모듈·비동기·localStorage가 있는 프리미엄 할 일 앱">
+  <title>할 일 · SKALA Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/theme.css">
+  <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="brand"><span class="brand__dot"></span> SKALA <span class="text-muted">Focus</span></a>
+      <nav class="nav__links">
+        <a href="../signup/index.html">회원가입</a>
+        <a href="../travel/index.html">여행</a>
+        <a href="../gallery/index.html">스토어</a>
+        <a href="index.html" class="is-active">할 일</a>
+      </nav>
+      <button class="icon-btn" data-theme-toggle style="margin-left:12px">🌙</button>
+    </div>
+  </header>
+
+  <main class="container todo-wrap">
+    <!-- 헤더 카드: 진행률 링 -->
+    <section class="head-card card card--pad" data-reveal>
+      <div class="head-info">
+        <span class="eyebrow">Focus</span>
+        <h1 class="head-title">오늘의 할 일</h1>
+        <p class="quote text-muted" id="quote">오늘의 한마디를 불러오는 중…</p>
+      </div>
+      <div class="ring" role="img" aria-label="진행률">
+        <svg viewBox="0 0 120 120" width="118" height="118">
+          <circle class="ring__bg" cx="60" cy="60" r="52"></circle>
+          <circle class="ring__fg" id="ringFg" cx="60" cy="60" r="52"
+                  transform="rotate(-90 60 60)"></circle>
+        </svg>
+        <div class="ring__label"><strong id="ringPct">0%</strong><span id="ringSub">0 / 0</span></div>
+      </div>
+    </section>
+
+    <!-- 입력 -->
+    <form id="addForm" class="add-bar card" data-reveal data-reveal-delay="1">
+      <input type="text" id="todoInput" class="add-input" placeholder="무엇을 해야 하나요?" autocomplete="off" aria-label="할 일 입력">
+      <button type="submit" class="btn btn--primary add-submit">추가 +</button>
+    </form>
+
+    <!-- 필터 -->
+    <div class="todo-toolbar" data-reveal data-reveal-delay="2">
+      <div class="chips" id="filters">
+        <button class="chip is-active" data-filter="all">전체</button>
+        <button class="chip" data-filter="active">진행중</button>
+        <button class="chip" data-filter="done">완료</button>
+      </div>
+      <button class="btn btn--ghost clear-btn" id="clearDone">완료 비우기</button>
+    </div>
+
+    <!-- 목록 -->
+    <ul id="list" class="todo-list" data-reveal data-reveal-delay="3"></ul>
+    <div class="empty" id="empty">
+      <div class="empty__emoji">🌱</div>
+      <p>아직 할 일이 없어요.<br>위에 첫 번째 할 일을 추가해 보세요!</p>
+    </div>
+
+    <!-- 하단 요약: 전체 · 진행중 · 완료 개수 -->
+    <div class="todo-summary" data-reveal data-reveal-delay="4">
+      <span>전체 <strong id="sumTotal">0</strong></span>
+      <span>진행중 <strong id="sumActive">0</strong></span>
+      <span>완료 <strong id="sumDone">0</strong></span>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 SKALA Focus</span>
+      <span class="text-muted">Module · Async · Storage</span>
+    </div>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
