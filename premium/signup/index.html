@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="실시간 검증과 라이브 프리뷰가 있는 프리미엄 회원가입">
+  <title>회원가입 · SKALA Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/theme.css">
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="brand"><span class="brand__dot"></span> SKALA <span class="text-muted">Studio</span></a>
+      <nav class="nav__links">
+        <a href="index.html" class="is-active">회원가입</a>
+        <a href="../travel/index.html">여행</a>
+        <a href="../gallery/index.html">스토어</a>
+        <a href="../todo/index.html">할 일</a>
+      </nav>
+      <button class="icon-btn" data-theme-toggle style="margin-left:12px">🌙</button>
+    </div>
+  </header>
+
+  <main class="container su">
+    <!-- 폼 -->
+    <section class="su__form-col" data-reveal>
+      <span class="eyebrow">Create account</span>
+      <h1 class="su__title">환영합니다 👋</h1>
+      <p class="text-muted">몇 가지 정보만 입력하면 바로 시작할 수 있어요.</p>
+
+      <form id="signupForm" class="card card--pad su__card">
+        <div class="field">
+          <label for="userName">이름 <b class="req">*</b></label>
+          <input class="control" type="text" id="userName" name="userName" required placeholder="홍길동">
+          <p class="hint" data-hint="userName"></p>
+        </div>
+
+        <div class="field">
+          <label for="userId">아이디 <b class="req">*</b></label>
+          <input class="control" type="text" id="userId" name="userId" required
+                 pattern="[A-Za-z0-9]{4,12}" title="영문/숫자 4~12자" placeholder="영문·숫자 4~12자">
+          <p class="hint" data-hint="userId">영문·숫자 조합 4~12자</p>
+        </div>
+
+        <div class="field">
+          <label for="userPw">비밀번호 <b class="req">*</b></label>
+          <div class="pw-wrap">
+            <input class="control" type="password" id="userPw" name="userPw" required minlength="8" placeholder="8자 이상">
+            <button type="button" class="pw-eye" id="pwToggle" aria-label="비밀번호 표시">👁</button>
+          </div>
+          <div class="meter" aria-hidden="true"><span id="meterBar"></span></div>
+          <p class="hint" data-hint="userPw" id="pwHint">8자 이상 입력하세요</p>
+        </div>
+
+        <div class="field">
+          <label for="userEmail">이메일 <b class="req">*</b></label>
+          <input class="control" type="email" id="userEmail" name="userEmail" required placeholder="you@skala.com">
+          <p class="hint" data-hint="userEmail"></p>
+        </div>
+
+        <div class="field">
+          <label for="userTel">전화번호</label>
+          <input class="control" type="tel" id="userTel" name="userTel"
+                 pattern="010-\d{4}-\d{4}" title="010-0000-0000 형식" placeholder="010-0000-0000">
+          <p class="hint" data-hint="userTel">형식: 010-0000-0000</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="userBirth">생년월일</label>
+            <input class="control" type="date" id="userBirth" name="userBirth" min="1900-01-01" max="2026-12-31">
+          </div>
+          <div class="field">
+            <label for="region">지역</label>
+            <select class="control" id="region" name="region">
+              <option value="" selected>선택 안 함</option>
+              <option>서울</option><option>경기</option><option>부산</option><option>대구</option><option>기타</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="field">
+          <legend class="label">성별</legend>
+          <div class="seg" role="radiogroup" id="genderSeg">
+            <label><input type="radio" name="gender" value="남성" checked><span>남성</span></label>
+            <label><input type="radio" name="gender" value="여성"><span>여성</span></label>
+            <label><input type="radio" name="gender" value="선택안함"><span>비공개</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend class="label">관심 분야 <span class="text-muted" style="font-weight:500">(복수 선택)</span></legend>
+          <div class="chips" id="interestChips">
+            <label class="chip"><input type="checkbox" name="interest" value="프론트엔드" hidden>🎨 프론트엔드</label>
+            <label class="chip"><input type="checkbox" name="interest" value="백엔드" hidden>🛠️ 백엔드</label>
+            <label class="chip"><input type="checkbox" name="interest" value="디자인" hidden>✏️ 디자인</label>
+            <label class="chip"><input type="checkbox" name="interest" value="데이터" hidden>📊 데이터</label>
+            <label class="chip"><input type="checkbox" name="interest" value="인프라" hidden>☁️ 인프라</label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="intro">한 줄 소개</label>
+          <textarea class="control" id="intro" name="intro" maxlength="120" placeholder="당신을 한 문장으로 표현한다면?"></textarea>
+          <p class="hint"><span id="introCount">0</span>/120</p>
+        </div>
+
+        <div class="field">
+          <label class="agree">
+            <input type="checkbox" id="agree" name="agree" value="동의" required>
+            <span>이용약관 및 개인정보 처리방침에 동의합니다. <b class="req">*</b></span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--lg btn--block">동의하고 회원가입</button>
+      </form>
+    </section>
+
+    <!-- 라이브 프리뷰 -->
+    <aside class="su__preview-col">
+      <div class="preview-card card" data-reveal data-reveal-delay="1">
+        <div class="preview-cover"></div>
+        <div class="preview-avatar" id="pvAvatar">S</div>
+        <div class="preview-body">
+          <h3 id="pvName" class="preview-name">이름을 입력하세요</h3>
+          <p id="pvId" class="preview-id text-muted">@아이디</p>
+          <p id="pvIntro" class="preview-intro">한 줄 소개가 여기에 표시됩니다.</p>
+          <div class="preview-meta">
+            <span class="badge" id="pvRegion">지역 미정</span>
+            <span class="badge" id="pvGender">성별</span>
+          </div>
+          <div class="preview-tags" id="pvInterests"></div>
+        </div>
+      </div>
+      <p class="preview-note text-muted center">입력하는 즉시 카드에 반영됩니다 ✨</p>
+    </aside>
+  </main>
+
+  <!-- 결과 패널 (제출 성공 시) -->
+  <div class="result-overlay" id="resultOverlay" hidden>
+    <div class="result-panel card" role="dialog" aria-modal="true">
+      <div class="result-check">✓</div>
+      <h2>가입 완료!</h2>
+      <p class="text-muted">입력하신 정보를 확인하세요.</p>
+      <table class="result-table"><tbody id="resultBody"></tbody></table>
+      <div class="row" style="gap:10px; margin-top:22px">
+        <button class="btn btn--primary" id="resultClose">다시 편집</button>
+        <a class="btn" href="../index.html">홈으로</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/app.js"></script>
+  <script src="signup.js"></script>
+</body>
+</html>
