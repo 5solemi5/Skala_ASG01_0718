@@ -1,0 +1,51 @@
+/* 랜딩 전용 스타일 */
+.hero {
+  display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center;
+  padding-top: clamp(40px, 7vw, 90px); padding-bottom: clamp(40px, 7vw, 90px);
+}
+.hero__title { font-size: clamp(38px, 6.2vw, 74px); margin: 20px 0 18px; }
+.hero__lead { font-size: clamp(16px, 1.4vw, 19px); color: var(--ink-2); max-width: 30rem; }
+.hero__stats { display: flex; gap: 30px; margin-top: 40px; }
+.hero__stats div { display: flex; flex-direction: column; }
+.hero__stats strong { font-family: var(--font-display); font-size: 30px; }
+.hero__stats span { color: var(--muted); font-size: 13px; }
+
+/* 히어로 아트 */
+.hero__art { position: relative; height: 420px; }
+.orb { position: absolute; border-radius: 50%; filter: blur(6px); opacity: .9; }
+.orb--1 { width: 300px; height: 300px; right: 4%; top: 6%; background: radial-gradient(circle at 30% 30%, var(--violet-2), var(--iris)); box-shadow: var(--sh-glow); animation: float 8s var(--ease) infinite; }
+.orb--2 { width: 170px; height: 170px; left: 2%; bottom: 6%; background: radial-gradient(circle at 30% 30%, var(--coral), var(--amber)); animation: float 6.5s var(--ease) infinite reverse; }
+@keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-22px) } }
+
+.glass-card {
+  position: absolute; padding: 18px 20px; border-radius: var(--r-md);
+  background: var(--glass); backdrop-filter: blur(14px);
+  border: 1px solid var(--line-2); box-shadow: var(--sh-lg);
+  font-family: var(--font-display); font-size: 34px; font-weight: 700;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.glass-card span { font-family: var(--font-sans); font-size: 12px; font-weight: 500; color: var(--muted); }
+.glass-card--a { top: 10%; left: 0; animation: float 7s var(--ease) infinite; }
+.glass-card--b { bottom: 16%; right: 8%; animation: float 7.5s var(--ease) infinite reverse; }
+.glass-card--c { bottom: 2%; left: 22%; flex-direction: row; gap: 8px; padding: 16px; }
+.sw { width: 26px; height: 26px; border-radius: 8px; }
+.sw1 { background: var(--violet); } .sw2 { background: var(--coral); } .sw3 { background: var(--mint); } .sw4 { background: var(--amber); }
+
+/* 작품 그리드 */
+.works { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 44px; }
+.work {
+  position: relative; overflow: hidden; text-decoration: none; color: inherit;
+  padding: 30px; display: flex; flex-direction: column; gap: 8px;
+}
+.work__glow { position: absolute; inset: -40% 40% 60% -40%; background: var(--g); filter: blur(60px); opacity: .16; transition: opacity .4s var(--ease); }
+.work:hover .work__glow { opacity: .34; }
+.work__icon { font-size: 40px; margin-bottom: 6px; }
+.work h3 { font-size: 24px; }
+.work p { color: var(--ink-2); margin: 0; }
+.work__tags { margin-top: 8px; font-family: var(--font-display); font-size: 12.5px; letter-spacing: .06em; color: var(--muted); text-transform: uppercase; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero__art { height: 300px; order: -1; }
+  .works { grid-template-columns: 1fr; }
+}
