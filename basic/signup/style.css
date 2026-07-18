@@ -1,0 +1,98 @@
+:root {
+  --main-color: #2f6fed;
+  --main-dark: #1f52bd;
+  --text-color: #222;
+  --muted: #777;
+  --border: #ddd;
+  --default-padding: 16px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Malgun Gothic", "Segoe UI", sans-serif;
+  color: var(--text-color);
+  background: #f5f7fb;
+  line-height: 1.6;
+}
+
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 20px;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+.site-header .logo { font-weight: bold; color: var(--main-color); letter-spacing: 1px; }
+.site-header nav a { margin-left: 14px; text-decoration: none; color: var(--muted); }
+.site-header nav a.active { color: var(--text-color); font-weight: bold; }
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 80px 20px 40px; /* fixed 헤더 높이만큼 상단 여백 */
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: var(--default-padding);
+  background: #fff;
+}
+legend { font-weight: bold; color: var(--main-dark); padding: 0 6px; }
+form p { margin: 12px 0; }
+label { font-weight: 600; }
+small { color: var(--muted); }
+
+input[type=text], input[type=password], input[type=email],
+input[type=tel], input[type=date], select, textarea {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: inherit;
+}
+input[type=text], input[type=password], input[type=email],
+input[type=tel], input[type=date], select, textarea { width: 100%; }
+textarea { resize: vertical; }
+/* radio/checkbox 는 라벨과 인라인 배치 */
+input[type=radio], input[type=checkbox] { width: auto; margin-right: 4px; }
+form p label input[type=radio],
+form p label input[type=checkbox] { vertical-align: middle; }
+
+input:hover, select:hover, textarea:hover { border-color: #b9c2d0; }
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 3px rgba(47,111,237,.15);
+}
+
+.btn {
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text-color);
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn:hover { background: #eef1f6; }
+.btn-primary { background: var(--main-color); border-color: var(--main-color); color: #fff; }
+.btn-primary:hover { background: var(--main-dark); }
+
+.result-table { width: 100%; border-collapse: collapse; background: #fff; }
+.result-table th, .result-table td {
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  text-align: left;
+}
+.result-table thead th { background: #f0f3f9; color: var(--main-dark); }
+.result-table tbody th { width: 140px; background: #fafbfe; }
+.result-table td.empty { color: #aab; }
